@@ -1,86 +1,30 @@
-# Mechanical Condition Classification and Regression
+# Deep Learning Projects
 
-This project uses the `mechanical.csv` dataset to build neural-network models for predicting mechanical equipment condition.
+This repository contains applied deep-learning projects, implementations, and
+experiments. Each project is organized around a distinct problem and includes
+relevant source code, documentation, and evaluation results.
 
-## Models
+The examples cover neural-network approaches to classification and regression,
+along with convolutional models for image recognition. The collection is
+intended to make the modeling process transparent, from data preparation and
+architecture choices through evaluation and comparison.
 
-### Classification
+## Projects
 
-The classification model predicts one of three condition classes: `0`, `1`, or `2`.
+### Mechanical condition prediction
 
-- Output layer: 3-node softmax
-- Loss: `sparse_categorical_crossentropy`
-- Metric: Accuracy
+Neural-network models use equipment operating measurements to classify
+mechanical condition. A regression model is also included for comparison.
 
-Because `condition_class` represents categories, classification is the recommended approach.
+- [Project folder](./mechanical-condition-classification-regression/)
+- [Project documentation](./mechanical-condition-classification-regression/README.md)
 
-### Regression
+### LeNet image classification
 
-The regression model treats the condition labels as numeric values for comparison.
+A controlled MNIST experiment compares average-pooling and max-pooling LeNet
+models. The results include test metrics, training curves, and examples of
+images for which the predicted labels differ.
 
-- Output layer: 1-node linear output
-- Loss: Mean squared error (`mse`)
-- Metrics: Mean absolute error and RMSE
-
-This regression model is provided for demonstration only. The values `0`, `1`, and `2` are class labels and do not necessarily represent meaningful continuous measurements.
-
-## Features
-
-The models use:
-
-- Rotational speed
-- Load
-- Bearing temperature
-- Lubricant level
-- Vibration
-
-The features are standardized before training.
-
-## Visualizations
-
-The script generates plots showing:
-
-- Classification training and validation loss
-- Classification training and validation accuracy
-- Regression training and validation loss
-- Regression training and validation mean absolute error
-
-## Files
-
-- `meche-data.py` - Python implementation
-- `meche-data.ipynb` - Jupyter Notebook version
-- `mechanical.csv` - Original dataset
-- `X_train.csv`, `X_test.csv` - Feature datasets
-- `y_train.csv`, `y_test.csv` - Target datasets
-
-## Requirements
-
-- Python 3.12.8
-- TensorFlow
-- pandas
-- NumPy
-- scikit-learn
-- Matplotlib
-- Jupyter Notebook
-
-Install the dependencies with:
-
-```bash
-pip install tensorflow pandas numpy scikit-learn matplotlib jupyter
-```
-
-## Running the Project
-
-Run the Python script:
-
-```bash
-python meche-data.py
-```
-
-Or open and run all cells in:
-
-meche-data.ipynb
-
-## Purpose
-
-This project demonstrates the difference between classification and regression neural networks using the same mechanical dataset.
+- [Experiment report](./lenet_results/lenet_mnist_report.md)
+- [Training curves](./lenet_results/training_curves.png)
+- [Changed-prediction examples](./lenet_results/changed_predictions.png)
